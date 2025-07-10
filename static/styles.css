@@ -1,0 +1,112 @@
+.charactersContainer{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  a{
+      text-decoration: none;
+      color: inherit;
+  }
+}
+
+.characterCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  img{
+      border-radius: 10%;
+      width: 175px;
+      height: 175px;
+  }
+  div{
+      font-weight: bold;
+  }
+}
+
+.characterContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.characterComponent{
+  display: flex;
+  flex-direction: column
+  ;
+}
+.Header {
+  width: 100%;
+  height: 50px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-left: 20px;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.Footer {
+  width: 100%;
+  height: 50px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-left: 20px;
+  align-items: center;
+  border-top: 1px solid #000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.Layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: auto;
+  justify-content: space-between;
+}
+
+.Content {
+  flex: 1;
+  padding: 20px;
+  margin: auto;
+}
+
+/*para los hipervinculos*/
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+
+.star {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: gray;
+}
+
+.star.fav {
+  color: gold;
+}
