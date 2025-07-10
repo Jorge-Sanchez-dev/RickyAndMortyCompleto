@@ -37,6 +37,7 @@ const Character: FunctionalComponent<Props> = (props) => {
 
       {/* ⭐ Añadimos el botón de favorito */}
       <StarButton id={props.id} initial={props.favorite} />
+      <a href="/" class="volver">Volver</a>
     </div>
   );
 };
