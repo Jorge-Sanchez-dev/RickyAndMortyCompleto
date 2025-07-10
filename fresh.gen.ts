@@ -9,6 +9,7 @@ import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
 import * as $character_id_ from "./routes/character/[id].tsx";
+import * as $favorites_index from "./routes/favorites/index.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $CompOne from "./islands/CompOne.tsx";
 import * as $CompThree from "./islands/CompThree.tsx";
@@ -25,6 +26,7 @@ const manifest = {
     "./routes/_app.tsx": $_app,
     "./routes/_layout.tsx": $_layout,
     "./routes/character/[id].tsx": $character_id_,
+    "./routes/favorites/index.tsx": $favorites_index,
     "./routes/index.tsx": $index,
   },
   islands: {

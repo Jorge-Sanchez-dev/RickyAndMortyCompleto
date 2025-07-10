@@ -1,7 +1,6 @@
 import { useSignal } from "@preact/signals";
-
 interface Props {
-  id: string;
+  id: number;
   initial: boolean;
 }
 
@@ -22,9 +21,9 @@ export default function StarButton({ id, initial }: Props) {
       }
     }
     if (fav.value) {
-      if (!list.includes(id)) list.push(id);
+      if (!list.includes(id.toString())) list.push(id.toString());
     } else {
-      list = list.filter((x) => x !== id);
+      list = list.filter((x) => x !== id.toString());
     }
     document.cookie = `favorites=${
       encodeURIComponent(JSON.stringify(list))

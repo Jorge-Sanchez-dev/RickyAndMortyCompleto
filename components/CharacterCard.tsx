@@ -8,17 +8,20 @@ type Props = {
     image: string;
     status: string;
     species: string;
-    id: string;
+    id: number;
   };
+  favorite?: boolean;
 };
 
 const CharacterCard: FunctionalComponent<Props> = (props) => {
-  const { name, image, status, species, id} = props.character;
+  const { name, image, status, species, id } = props.character;
 
   return (
-    <div class="characterCard">
-      <img src={image} alt={name} />
-      <div>{name}</div>
+    <div class="characterCard" style={{ textAlign: "center" }}>
+      <a href={`/character/${id}`}>
+        <img src={image} alt={name} />
+        <div>{name}</div>
+      </a>
       <div
         style={{
           fontSize: "0.9em",
@@ -31,8 +34,8 @@ const CharacterCard: FunctionalComponent<Props> = (props) => {
       >
         {status}
       </div>
-      <div> Especie: {species} </div>
-      <StarButton id={id} initial={false} />
+      <div>Especie: {species}</div>
+      <StarButton id={id} initial={props.favorite ?? false} />
     </div>
   );
 };

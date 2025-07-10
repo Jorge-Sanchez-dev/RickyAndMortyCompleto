@@ -6,6 +6,7 @@ const Header: FunctionComponent = () => {
       <a href="/">Home</a>
       <a href="/ListaPersonajes">Listar personajes</a>
       <a href="/BuscarPersonaje">Buscar personaje</a>
+      <a href="/favorites">Lista favoritos </a>
     </div>
   );
 };

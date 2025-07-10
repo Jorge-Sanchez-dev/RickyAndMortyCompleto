@@ -1,3 +1,4 @@
+//signals.ts
 import { Signal } from '@preact/signals';
 
 export const page = new Signal<number>(1);

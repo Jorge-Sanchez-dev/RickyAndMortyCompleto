@@ -2,8 +2,10 @@
 import Axios from "axios";
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
 import CharacterContainer from "../../components/CharacterContainer.tsx";
+import { getFavoritesCookie } from "../../lib/cookies.ts";
+
 type Character = {
-    id: string;
+    id: number;
     name: string;
     status: string;
     origin: string;
@@ -13,10 +15,11 @@ type Character = {
 }
 type Data = {
     character: Character;
+    favorites: string[];
 }
 type CharacterAPI = {
     name: string;
-    id: string;
+    id: number;
     status: string;
     origin: {name: string};
     episode: string[];
@@ -31,6 +34,7 @@ export const handler: Handlers = {
     GET: async(_req: Request, ctx: FreshContext<unknown, Data>) => {
         const {id} = ctx.params;
         const url = `https://rickandmortyapi.com/api/character/${id}`;
+        const favorites = getFavoritesCookie(_req.headers.get("cookie"));
         try{
             const response = await Axios.get<CharacterAPI>(url);
             const episodes = (await Promise.all(response.data.episode.map(
@@ -43,7 +47,7 @@ export const handler: Handlers = {
                 episodes
             };
 
-            return ctx.render({character});
+            return ctx.render({character, favorites });
 
         }catch(_e){
             return new Response("Error de API");
@@ -51,6 +55,6 @@ export const handler: Handlers = {
     }
 };
 
-const Page = (props:PageProps<Data>) => <CharacterContainer character={props.data.character}/>
+const Page = (props:PageProps<Data>) => <CharacterContainer character={props.data.character} favorites={props.data.favorites}/>
 
 export default Page;

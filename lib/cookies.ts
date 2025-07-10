@@ -1,3 +1,4 @@
+//Lib/cookies.ts
 export function getFavoritesCookie(cookie: string | null): string[] {
   if (!cookie) return [];
   const match = /favorites=([^;]+)/.exec(cookie);

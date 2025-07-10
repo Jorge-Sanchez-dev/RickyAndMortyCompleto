@@ -1,3 +1,4 @@
+//BuscarPersonaje.tsx
 import CompOne from "../islands/CompOne.tsx";
 import CompThree from "../islands/CompThree.tsx";
 import CompTwo from "../islands/CompTwo.tsx";

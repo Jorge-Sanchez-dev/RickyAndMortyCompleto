@@ -1,5 +1,6 @@
 //components/Character.tsx
 import { FunctionalComponent } from "preact/src/index.d.ts";
+import StarButton from "../islands/StarButton.tsx";
 
 type Props = {
   name: string;
@@ -7,6 +8,8 @@ type Props = {
   origin: string;
   image: string;
   species: string;
+  id: number;
+  favorite: boolean;
 };
 
 const Character: FunctionalComponent<Props> = (props) => {
@@ -31,6 +34,9 @@ const Character: FunctionalComponent<Props> = (props) => {
       </div>
 
       <div>Especie: {props.species}</div>
+
+      {/* ⭐ Añadimos el botón de favorito */}
+      <StarButton id={props.id} initial={props.favorite} />
     </div>
   );
 };
